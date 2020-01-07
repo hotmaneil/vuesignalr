@@ -4,7 +4,6 @@
     <p>訊息內容：</p>
     <ul>
       <li v-for="(item,key) in messages" :key="key">{{item.Message}}</li>
-      <!-- <li v-for="item in messages" :key="item">{{item.Message}}</li> -->
     </ul>
     <p>{{ReveiveData}}</p>
   </div>
@@ -35,26 +34,14 @@ export default {
 
       // console.log('proxy', proxy);
 
-      // proxy.on('ReceiveMsg', function ReceiveData(data) {
-      //   console.log('data', data);
-      //   vm.messages = data;
-      // });
-
       proxy.on('ReceiveMsg', (data) => {
         console.log('data', data);
         vm.messages = data;
       });
 
-      // proxy.on('ReceiveMsg', data => vm.messages = data);
-
       // 一開始就先去呼叫Get，以確保畫面一開始就有預設的資料
       hub.start().done(() => proxy.invoke('ReceiveMsg'));
     },
-
-    // ReceiveData(data){
-    //     console.log('data', data);
-    //     vm.messages = data;
-    // },
   },
 
   created() {
