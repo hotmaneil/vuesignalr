@@ -5,10 +5,13 @@ import $ from 'jquery';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import FlashMessage from '@smartweb/vue-flash-message';
 
 import 'signalr';
 
 Vue.config.productionTip = false;
+
+Vue.use(FlashMessage);
 
 new Vue({
   router,

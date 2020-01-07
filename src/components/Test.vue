@@ -5,7 +5,8 @@
     <ul>
       <li v-for="(item,key) in messages" :key="key">{{item.Message}}</li>
     </ul>
-    <p>{{ReveiveData}}</p>
+    <!-- <p>{{ReveiveData}}</p> -->
+    <FlashMessage></FlashMessage>
   </div>
 </template>
 
@@ -37,6 +38,16 @@ export default {
       proxy.on('ReceiveMsg', (data) => {
         console.log('data', data);
         vm.messages = data;
+      });
+
+      proxy.on('SingleMessage', (msg) => {
+        console.log('SingleMessage', msg);
+        vm.ReveiveData = msg;
+
+        this.flashMessage.error({
+          title: 'Alert!',
+          message: msg,
+        });
       });
 
       // 一開始就先去呼叫Get，以確保畫面一開始就有預設的資料
