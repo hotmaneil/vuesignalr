@@ -18,7 +18,9 @@ export default {
     };
   },
 
-  mounted() {},
+  mounted() {
+    this.LoadResults(1);
+  },
 
   methods: {
     myCallback() {},
@@ -93,7 +95,6 @@ export default {
     }
   },
   created() {
-    this.LoadResults(1);
     this.CallHub();
   }
 };

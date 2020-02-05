@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <router-link to="/highCharts">測試highcharts-LineChart</router-link>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">About</router-link>|
+      <router-link to="/highCharts">測試highcharts-BarChart</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 

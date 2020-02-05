@@ -1,7 +1,7 @@
 <template>
-  <div class="lineChart">
+  <div class="barChart">
     <!-- <LineChart/> -->
-    <BarChart/>
+    <BarChart />
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   components: {
     /* eslint-disable vue/no-unused-components */
     // LineChart,
-    BarChart,
-  },
+    BarChart
+  }
 };
 </script>
